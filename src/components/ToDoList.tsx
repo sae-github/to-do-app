@@ -1,25 +1,18 @@
 import DeleteSharpIcon from "@mui/icons-material/DeleteSharp";
+import { useSelector } from "react-redux";
 
 export const ToDoList = () => {
+  const todoList = useSelector((state) => state.todo);
+
   return (
     <ul className="mt-5 [&_li]:bg-white [&_li]:mb-3 [&_li]:p-3 ">
-      <li className="flex">
-        <input type="checkbox" name="" id="" className="mr-3 peer" />
-        <p className="peer-checked:line-through">買い出しに行く</p>
-        <DeleteSharpIcon className="cursor-pointer ml-auto" />
-      </li>
-
-      <li className="flex">
-        <input type="checkbox" name="" id="" className="mr-3 peer" />
-        <p className="peer-checked:line-through">郵便局で支払いをする</p>
-        <DeleteSharpIcon className="cursor-pointer ml-auto" />
-      </li>
-
-      <li className="flex">
-        <input type="checkbox" name="" id="" className="mr-3 peer" />
-        <p className="peer-checked:line-through">Reactのドキュメントを見る</p>
-        <DeleteSharpIcon className="cursor-pointer ml-auto" />
-      </li>
+      {todoList.map((list, i) => (
+        <li className="flex" key={i}>
+          <input type="checkbox" name="" id="" className="mr-3 peer" />
+          <p className="peer-checked:line-through">{list.text}</p>
+          <DeleteSharpIcon className="cursor-pointer ml-auto" />
+        </li>
+      ))}
     </ul>
   );
 };
