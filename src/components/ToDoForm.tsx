@@ -1,6 +1,6 @@
 import CloseIcon from "@mui/icons-material/Close";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../fatures/todoListSlice.js";
+import { addTodo } from "../feature/todoListSlice.js";
 
 const onClickResetButton = () => {
   const toDoField = document.getElementById("js-todo-field") as HTMLFormElement;
