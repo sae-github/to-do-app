@@ -1,8 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [
+interface Todo {
+  title: string;
+  completed: boolean;
+}
+
+const initialState: Todo[] = [
   {
-    text: "買い物に行く",
+    title: "買い物へいく",
+    completed: false,
   },
 ];
 
@@ -11,7 +17,7 @@ export const todoListSlice = createSlice({
   initialState,
   reducers: {
     addTodo: (state, action) => {
-      state.push({ text: action.payload });
+      state.push({ title: action.payload, completed: false });
     },
     deleteTodo: (state, action) => {
       state.splice(action.payload);
