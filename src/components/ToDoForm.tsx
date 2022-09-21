@@ -1,6 +1,6 @@
 import CloseIcon from "@mui/icons-material/Close";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../feature/todoListSlice.js";
+import { addTodo } from "../features/todoListSlice.js";
 
 const onClickResetButton = () => {
   const toDoField = document.getElementById("js-todo-field") as HTMLFormElement;
@@ -10,7 +10,10 @@ const onClickResetButton = () => {
 export const ToDoForm = () => {
   const dispatch = useDispatch();
 
-  const onClickSubmit = (e) => {
+  const onClickSubmit = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    console.log(e);
     e.preventDefault();
     const toDoField = document.getElementById(
       "js-todo-field"

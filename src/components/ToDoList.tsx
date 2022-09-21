@@ -1,8 +1,9 @@
 import DeleteSharpIcon from "@mui/icons-material/DeleteSharp";
 import { useSelector } from "react-redux";
+import type { RootState } from "../app/store";
 
 export const ToDoList = () => {
-  const todoList = useSelector((state) => state.todo);
+  const todoList = useSelector((state: RootState) => state.todo);
 
   return (
     <ul className="mt-5">
