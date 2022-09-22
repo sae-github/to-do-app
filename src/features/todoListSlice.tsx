@@ -25,8 +25,10 @@ export const todoListSlice = createSlice({
         completed: false,
       });
     },
-    deleteTodo: (state, action) => {
-      state.splice(action.payload);
+    deleteTodo: (state, action: PayloadAction<string>) => {
+      const targetIndex = state.findIndex((s) => s.id === action.payload);
+      if (targetIndex === -1) return;
+      state.splice(targetIndex, 1);
     },
     toggleComplete: (state, action) => {
       const target = state.find((s) => s.id === action.payload);

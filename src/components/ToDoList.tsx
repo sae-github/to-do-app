@@ -1,11 +1,15 @@
 import DeleteSharpIcon from "@mui/icons-material/DeleteSharp";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../app/store";
-import { toggleComplete } from "../features/todoListSlice.js";
+import { toggleComplete, deleteTodo } from "../features/todoListSlice.js";
 
 export const ToDoList = () => {
   const todoList = useSelector((state: RootState) => state.todo);
   const dispatch = useDispatch();
+
+  const onClickDelete = (targetId: string) => {
+    dispatch(deleteTodo(targetId));
+  };
 
   return (
     <ul className="mt-5">
@@ -19,7 +23,10 @@ export const ToDoList = () => {
             onChange={() => dispatch(toggleComplete(list.id))}
           />
           <p className="peer-checked:line-through">{list.title}</p>
-          <DeleteSharpIcon className="cursor-pointer ml-auto" />
+          <DeleteSharpIcon
+            className="cursor-pointer ml-auto"
+            onClick={() => onClickDelete(list.id)}
+          />
         </li>
       ))}
     </ul>
