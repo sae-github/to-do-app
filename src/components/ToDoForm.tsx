@@ -1,4 +1,5 @@
 import CloseIcon from "@mui/icons-material/Close";
+import { v4 as uuidv4 } from "uuid";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../features/todoListSlice.js";
 
@@ -13,12 +14,11 @@ export const ToDoForm = () => {
   const onClickSubmit = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
-    console.log(e);
     e.preventDefault();
     const toDoField = document.getElementById(
       "js-todo-field"
     ) as HTMLFormElement;
-    dispatch(addTodo(toDoField.value));
+    dispatch(addTodo({ title: toDoField.value, id: uuidv4() }));
     toDoField.value = "";
   };
 
