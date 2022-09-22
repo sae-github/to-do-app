@@ -5,7 +5,16 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: #9fd9d0;
+  }
+
+  :root.dark {
+    --background: #1e293b;
+  }
+
   body {
-    background-color: #9fd9d0;
+    background-color: var(--background);
+    color: var(--text);
   }
 }
