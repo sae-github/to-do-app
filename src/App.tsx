@@ -1,27 +1,10 @@
-import { useEffect, useState } from "react";
 import { Header } from "./components/Header";
 import { ToDoForm } from "./components/ToDoForm";
 import { ToDoList } from "./components/ToDoList";
-const theme = localStorage.getItem("theme");
+import { useDarkMode } from "./hooks/useDarkMode";
 
 export const App = () => {
-  const [isDarkMode, setIsDarkMode] = useState(Boolean(theme));
-  const toggleDarkMode = () => {
-    setIsDarkMode((mode) => !mode);
-  };
-
-  useEffect(() => {
-    if (
-      isDarkMode ||
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.removeItem("theme");
-    }
-  }, [isDarkMode]);
+  const { isDarkMode, toggleDarkMode } = useDarkMode();
 
   return (
     <div>
