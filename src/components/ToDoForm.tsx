@@ -39,7 +39,7 @@ export const ToDoForm = () => {
         <button
           type="submit"
           onClick={onClickSubmit}
-          className="font-en text-lg bg-[#f7c9c0] px-5 py-2 w-[100px] color-[#333] ml-2 rounded-lg tracking-wider"
+          className="font-en text-lg bg-[#f7c9c0] px-5 py-2 w-[100px] color-[#333] ml-2 rounded-lg tracking-wider hover:bg-[#fcb4a6]"
         >
           Add
         </button>
