@@ -3,7 +3,10 @@ import { v4 as uuidv4 } from "uuid";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../features/todoListSlice.js";
 
-const onClickResetButton = () => {
+const onClickResetButton = (
+  event: React.MouseEvent<SVGSVGElement, MouseEvent>
+) => {
+  event.preventDefault();
   const toDoField = document.getElementById("js-todo-field") as HTMLFormElement;
   toDoField.value = "";
 };
