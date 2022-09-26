@@ -25,10 +25,9 @@ export const ToDoItem = ({
         onChange={() => onClickCheckbox(list.id)}
       />
       <p className="peer-checked:line-through">{list.title}</p>
-      <DeleteSharpIcon
-        className="cursor-pointer ml-auto"
-        onClick={() => onClickDelete(list.id)}
-      />
+      <button className="cursor-pointer ml-auto">
+        <DeleteSharpIcon onClick={() => onClickDelete(list.id)} />
+      </button>
     </li>
   );
 };

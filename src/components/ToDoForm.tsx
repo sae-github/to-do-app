@@ -18,6 +18,7 @@ export const ToDoForm = () => {
     const toDoField = document.getElementById(
       "js-todo-field"
     ) as HTMLFormElement;
+    if (toDoField.value === "") return;
     dispatch(addTodo({ title: toDoField.value, id: uuidv4() }));
     toDoField.value = "";
   };
@@ -32,15 +33,14 @@ export const ToDoForm = () => {
             className="pl-6 pr-8 py-5 w-full"
             id="js-todo-field"
           />
-          <CloseIcon
-            className="absolute right-2 top-[50%] translate-y-[-50%] cursor-pointer"
-            onClick={onClickResetButton}
-          />
+          <button className="absolute right-2 top-[50%] translate-y-[-50%] ">
+            <CloseIcon onClick={onClickResetButton} />
+          </button>
         </div>
         <button
           type="submit"
           onClick={onClickSubmit}
-          className="font-en text-lg bg-[#f7c9c0] px-5 py-2 w-[100px] color-[#333] ml-2 rounded-lg tracking-wider"
+          className="font-en text-lg bg-[#f7c9c0] px-5 py-2 w-[100px] color-[#333] ml-2 rounded-lg tracking-wider hover:bg-[#f1a99a]"
         >
           Add
         </button>
