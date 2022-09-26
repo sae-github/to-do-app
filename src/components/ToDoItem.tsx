@@ -1,4 +1,5 @@
 import DeleteSharpIcon from "@mui/icons-material/DeleteSharp";
+import CloseIcon from "@mui/icons-material/Close";
 import { memo } from "react";
 
 interface TodoItem {
@@ -41,7 +42,7 @@ export const ToDoItem = memo(
           ></span>
           <span className="peer-checked:line-through">{list.title}</span>
         </label>
-        <button className="cursor-pointer ml-auto">
+        <button className="cursor-pointer ml-auto hover:opacity-70">
           <DeleteSharpIcon onClick={() => onClickDelete(list.id)} />
         </button>
       </li>
