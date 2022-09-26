@@ -18,6 +18,7 @@ export const ToDoForm = () => {
     const toDoField = document.getElementById(
       "js-todo-field"
     ) as HTMLFormElement;
+    if (toDoField.value === "") return;
     dispatch(addTodo({ title: toDoField.value, id: uuidv4() }));
     toDoField.value = "";
   };
@@ -39,7 +40,7 @@ export const ToDoForm = () => {
         <button
           type="submit"
           onClick={onClickSubmit}
-          className="font-en text-lg bg-[#f7c9c0] px-5 py-2 w-[100px] color-[#333] ml-2 rounded-lg tracking-wider hover:bg-[#fcb4a6]"
+          className="font-en text-lg bg-[#f7c9c0] px-5 py-2 w-[100px] color-[#333] ml-2 rounded-lg tracking-wider hover:bg-[#f1a99a]"
         >
           Add
         </button>
