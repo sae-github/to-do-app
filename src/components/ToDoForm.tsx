@@ -36,7 +36,7 @@ export const ToDoForm = () => {
             className="pl-6 pr-8 py-5 w-full"
             id="js-todo-field"
           />
-          <button className="absolute right-2 top-[50%] translate-y-[-50%] ">
+          <button className="absolute right-2 top-[50%] translate-y-[-50%] hover:opacity-70">
             <CloseIcon onClick={onClickResetButton} />
           </button>
         </div>
