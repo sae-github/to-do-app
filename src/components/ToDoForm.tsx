@@ -33,7 +33,7 @@ export const ToDoForm = () => {
           <input
             type="text"
             placeholder="What is your todo"
-            className="pl-6 pr-8 py-5 w-full"
+            className="pl-6 pr-8 py-5 w-full border-2 border-white focus:border-2 focus:border-black/70 outline-0"
             id="js-todo-field"
           />
           <button className="absolute right-2 top-[50%] translate-y-[-50%] hover:opacity-70">
