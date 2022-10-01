@@ -1,11 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
-import type { RootState } from "../app/store";
+import { useDispatch } from "react-redux";
 import { ToDoItem } from "./ToDoItem";
 import { toggleComplete, deleteTodo } from "../features/todoListSlice.js";
 import { useCallback } from "react";
+import { Todo as TodoList } from "../features/todoListSlice";
 
-export const ToDoList = () => {
-  const todoList = useSelector((state: RootState) => state.todo);
+export const ToDoList = ({ filteredList }: { filteredList: TodoList[] }) => {
   const dispatch = useDispatch();
 
   const onClickDelete = useCallback((targetId: string): void => {
@@ -18,7 +17,7 @@ export const ToDoList = () => {
 
   return (
     <ul className="mt-5">
-      {todoList.map((list) => (
+      {filteredList.map((list) => (
         <ToDoItem
           list={list}
           key={list.id}

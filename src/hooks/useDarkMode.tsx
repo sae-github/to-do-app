@@ -3,13 +3,11 @@ const osDark = window.matchMedia("(prefers-color-scheme: dark)");
 const theme = localStorage.getItem("theme");
 
 const onDarkMode = () => {
-  console.log("ON Dark");
   document.documentElement.classList.add("dark");
   localStorage.setItem("theme", "dark");
 };
 
 const offDarkMode = () => {
-  console.log("OFF Dark");
   document.documentElement.classList.remove("dark");
   localStorage.removeItem("theme");
 };
