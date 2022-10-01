@@ -16,7 +16,7 @@ export const ToDoList = ({ filteredList }: { filteredList: TodoList[] }) => {
   }, []);
 
   return (
-    <ul className="mt-5">
+    <ul className="mt-7">
       {filteredList.map((list) => (
         <ToDoItem
           list={list}
