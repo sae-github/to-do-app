@@ -12,6 +12,16 @@ const initialState: Todo[] = [
     title: "買い物へいく",
     completed: true,
   },
+  {
+    id: "hoeghoge",
+    title: "請求書の作成",
+    completed: false,
+  },
+  {
+    id: "fafafaffafa",
+    title: "書類の整理をする",
+    completed: false,
+  },
 ];
 
 export const todoListSlice = createSlice({

@@ -1,12 +1,6 @@
 import DeleteSharpIcon from "@mui/icons-material/DeleteSharp";
-import CloseIcon from "@mui/icons-material/Close";
 import { memo } from "react";
-
-interface TodoItem {
-  id: string;
-  title: string;
-  completed: boolean;
-}
+import { Todo } from "../features/todoListSlice";
 
 export const ToDoItem = memo(
   ({
@@ -14,7 +8,7 @@ export const ToDoItem = memo(
     onClickDelete,
     onClickCheckbox,
   }: {
-    list: TodoItem;
+    list: Todo;
     onClickDelete: (id: string) => void;
     onClickCheckbox: (id: string) => void;
   }) => {
