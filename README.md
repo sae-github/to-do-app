@@ -1,6 +1,6 @@
 # ToDo アプリ
 
-##
+## 使用した言語/フレームワーク...等
 
 - React
 - TypeScript
@@ -21,3 +21,4 @@
 - TypeScript の理解を深めるため
 
 ## デモ
+<img src="https://user-images.githubusercontent.com/76232904/194702809-e17534be-5e4e-4b33-bca3-625eb70b0453.gif" width="500px"/>
