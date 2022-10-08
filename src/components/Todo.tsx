@@ -25,10 +25,10 @@ export const Todo = () => {
   const filteredList = switchFilteredList(todoList, sortStatus);
 
   return (
-    <div className="max-w-4xl mx-auto mt-9 px-[20px]">
+    <div className="max-w-4xl mx-auto mt-9 px-[20px] overflow-hidden h-screen">
       <ToDoForm />
       <ToDoFilter setSortStatus={setSortStatus} sortStatus={sortStatus} />
-      <ToDoList filteredList={filteredList} />
+      <ToDoList filteredList={filteredList} todoList={todoList} />
     </div>
   );
 };
