@@ -45,8 +45,12 @@ export const todoListSlice = createSlice({
       if (!target) return;
       target.completed = !target.completed;
     },
+    sortDragAndDrop: (state, action) => {
+      return (state = action.payload.map((v: object) => v));
+    },
   },
 });
 
-export const { addTodo, deleteTodo, toggleComplete } = todoListSlice.actions;
+export const { addTodo, deleteTodo, toggleComplete, sortDragAndDrop } =
+  todoListSlice.actions;
 export default todoListSlice.reducer;
