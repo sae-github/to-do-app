@@ -31,6 +31,7 @@ export const ToDoItem = memo(
         onDragEnter={() => onDragEnter(index)}
         onDragOver={(e) => e.preventDefault()}
         onDragEnd={onDragEnd}
+        id={list.id}
       >
         <DragHandleIcon />
         <div className="relative flex flex-1">

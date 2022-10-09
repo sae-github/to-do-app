@@ -21,11 +21,27 @@ export const ToDoList = ({
   const dragOverItem = useRef<number | null>(null);
 
   const onDragEnd = () => {
-    let todoItems = [...todoList];
+    const todoItems = [...todoList];
     if (dragOverItem.current === null || dragItem.current === null) return;
 
-    const draggedItemContent = todoItems.splice(dragItem.current, 1);
-    todoItems.splice(dragOverItem.current, 0, ...draggedItemContent);
+    const dragTargetId = [...document.querySelectorAll(".js-todo-item ")][
+      dragItem.current
+    ].id;
+
+    const overTargetId = [...document.querySelectorAll(".js-todo-item ")][
+      dragOverItem.current
+    ].id;
+
+    const dragTargetIndex = todoItems.findIndex(
+      (item) => item.id === dragTargetId
+    );
+
+    const overTargetIndex = todoItems.findIndex(
+      (item) => item.id === overTargetId
+    );
+
+    const draggedItemContent = todoItems.splice(dragTargetIndex, 1);
+    todoItems.splice(overTargetIndex, 0, ...draggedItemContent);
 
     dragItem.current = null;
     dragOverItem.current = null;
