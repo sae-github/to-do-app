@@ -11,7 +11,7 @@ export const ToDoFilter = ({ setSortStatus, sortStatus }: TodoFilter) => {
 
   return (
     <div className="mt-7 flex justify-center">
-      <div className="mr-4 h-full">
+      <div className="mr-4 h-[40px] w-[120px] text-center ">
         <input
           type="radio"
           id="default"
@@ -23,12 +23,12 @@ export const ToDoFilter = ({ setSortStatus, sortStatus }: TodoFilter) => {
         />
         <label
           htmlFor="default"
-          className="font-en cursor-pointer py-2 px-6 bg-white border-2 border-black peer-checked:bg-amber-200 rounded-md"
+          className="font-en cursor-pointer flex justify-center flex-col bg-white peer-checked:bg-amber-200 h-full w-full border-2 border-black rounded-md"
         >
           All
         </label>
       </div>
-      <div className=" mr-4">
+      <div className=" mr-4 h-[40px] w-[120px] text-center">
         <input
           type="radio"
           id="uncompleted"
@@ -39,12 +39,12 @@ export const ToDoFilter = ({ setSortStatus, sortStatus }: TodoFilter) => {
         />
         <label
           htmlFor="uncompleted"
-          className="font-en cursor-pointer py-2 px-6 bg-white border-2 border-black peer-checked:bg-amber-200 rounded-md"
+          className="font-en cursor-pointer flex justify-center flex-col bg-white peer-checked:bg-amber-200 h-full w-full border-2 border-black rounded-md"
         >
           Active
         </label>
       </div>
-      <div className="">
+      <div className="h-[40px] w-[120px] text-center">
         <input
           type="radio"
           id="completed"
@@ -55,7 +55,7 @@ export const ToDoFilter = ({ setSortStatus, sortStatus }: TodoFilter) => {
         />
         <label
           htmlFor="completed"
-          className="font-en cursor-pointer py-2 px-6 bg-white border-2 border-black peer-checked:bg-amber-200 rounded-md"
+          className="font-en cursor-pointer flex justify-center flex-col bg-white peer-checked:bg-amber-200 h-full w-full border-2 border-black rounded-md"
         >
           Competed
         </label>
